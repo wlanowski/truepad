@@ -33,6 +33,16 @@ require_once(__DIR__ . '/../adminconfig.php');
     <!-- Select2 -->
     <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="src/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- awesome-markers -->
+    <link rel="stylesheet" href="src/leaflet-awesomemarkers/leaflet.awesome-markers.css">
+    <!-- Leaflet -->
+    <script src="src/leaflet/leaflet.js"></script>
+    <script src="src/leaflet-awesomemarkers/leaflet.awesome-markers.js"></script>
+
+
 </head>
 
 <body class="nav-md">

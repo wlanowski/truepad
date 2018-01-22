@@ -5,6 +5,41 @@ var base_wlanowski = L.tileLayer('http://localhost/tiles/tilesneu/{z}/{x}/{y}.pn
 
 weltgrenzen = new L.LatLngBounds(new L.LatLng(50.73758, 13.92636), new L.LatLng(51.12673, 13.57839));
 
+//Pfad eventuell anpassen, gerade auf Repository angepasst
+$.getJSON("func/poismysqltogeojson.php", function (data) {
+    var geojson_pois = L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+
+            // USE A CUSTOM MARKER
+            //layer.setIcon(L.mapbox.marker.icon({'marker-symbol': 'circle-stroked', 'marker-color': '59245f'}));
+
+            var tempicon;
+
+            if (feature.properties.icon!='')
+            {
+                tempicon=feature.properties.icon;
+            }
+            else
+            {
+                tempicon='tasks'
+            }
+
+            layer.setIcon(L.AwesomeMarkers.icon({
+                icon: tempicon,
+                prefix: 'fa',
+                markerColor: 'blue',
+                iconColor: 'white'
+            }));
+
+            // ADD A POPUP WITH A CHART
+            layer.bindPopup(feature.properties.name);
+
+
+        }
+    });
+    geojson_pois.addTo(mymap);
+});
+
 
 var mymap = L.map('admin_mapid', {
     attributionControl: false,
