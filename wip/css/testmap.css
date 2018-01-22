@@ -1,0 +1,51 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#mapid {
+    height: 100%;
+    width: 88%;
+
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 0;
+    bottom: 0;
+}
+
+#admin_mapid {
+    height: 100%;
+    width: 76%;
+
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 0;
+    bottom: 0;
+}
+
+#admin_panel {
+    height: 100%;
+    width: 12%;
+
+    position: absolute;
+    top: 0;
+    left: 88%;
+    right: 0;
+    bottom: 0;
+
+    margin: 1%;
+}
+
+/*
+Warum die 85%/15%-Verteilung?
+Das Sidemenü ist 15% breit. Deswegen Verschiebung um 15%, die Breite der Karte muss dann 100-15=85% sein...
+John 26.12.2017
+ */
+
